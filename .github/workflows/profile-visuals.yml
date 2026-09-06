@@ -1,0 +1,48 @@
+name: Refresh profile visuals
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "17 3 * * *"
+  push:
+    branches: [main]
+    paths:
+      - ".github/scripts/generate-profile-metrics.mjs"
+      - ".github/workflows/profile-visuals.yml"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: profile-visuals
+  cancel-in-progress: true
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Generate profile metrics
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          PROFILE_USER: jhonwictordev
+        run: node .github/scripts/generate-profile-metrics.mjs
+
+      - name: Generate contribution snake
+        uses: Platane/snk/svg-only@v3
+        with:
+          github_user_name: jhonwictordev
+          outputs: |
+            assets/generated/github-snake.svg?color_snake=#ff6b45&color_dots=#ebedf0,#ffd9cf,#ffaf99,#ff8465,#ff6b45
+            assets/generated/github-snake-dark.svg?palette=github-dark&color_snake=#ff6b45&color_dots=#161b22,#4b251e,#913d29,#c65336,#ff6b45
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Publish refreshed assets
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add assets/generated
+          git diff --cached --quiet || git commit -m "chore: refresh profile visuals [skip ci]"
+          git push

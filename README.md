@@ -34,13 +34,13 @@ I work at the intersection of **interface design and software development** — 
       <h3>Martins Tech Place</h3>
       <p>Full-stack commerce experience with authentication, catalog management and Mercado Livre integration.</p>
       <p><code>Next.js</code> <code>TypeScript</code> <code>Prisma</code> <code>PostgreSQL</code></p>
-      <a href="https://github.com/jhonwictordev/martins-tech-place">Repository</a>
+      <a href="https://github.com/jhonwictordev/martins-tech-place">Repository</a> · <a href="https://jhonwictordev.github.io/martins-tech-place/">Safe demo</a>
     </td>
     <td width="50%" valign="top">
       <h3>Portaria360</h3>
       <p>API-first, multi-tenant PWA for access management with live events, auditability and operational workflows.</p>
       <p><code>Node.js</code> <code>REST</code> <code>SSE</code> <code>PWA</code></p>
-      <a href="https://github.com/jhonwictordev/PORTARIA360">Repository</a>
+      <a href="https://github.com/jhonwictordev/PORTARIA360">Repository</a> · <a href="https://jhonwictordev.github.io/PORTARIA360/">Safe demo</a>
     </td>
   </tr>
   <tr>
@@ -48,7 +48,7 @@ I work at the intersection of **interface design and software development** — 
       <h3>Instagram Prospecting Agent</h3>
       <p>Human-in-the-loop prospecting workflow with approval gates, contact normalization and safe browser automation.</p>
       <p><code>TypeScript</code> <code>n8n</code> <code>Playwright</code> <code>PostgreSQL</code></p>
-      <a href="https://github.com/jhonwictordev/instagram-prospecting-agent">Repository</a>
+      <a href="https://github.com/jhonwictordev/instagram-prospecting-agent">Repository</a> · <a href="https://jhonwictordev.github.io/instagram-prospecting-agent/">Safe demo</a>
     </td>
     <td width="50%" valign="top">
       <h3>Wictor Films</h3>
